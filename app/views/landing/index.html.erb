@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContractShield - AI Contract Risk Review for UK SMEs</title>
+  <meta name="description" content="Get clarity before you sign. AI contract risk review built for business owners, not lawyers. Upload a supply contract, get a colour-coded risk report in 2 minutes.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-sans antialiased bg-white text-[#1a1a1a]">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 z-50 w-full border-b border-[#e5e5e3] bg-white">
+    <div class="flex items-center justify-between px-6 py-4 md:px-12">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" class="text-[#0F6E56]" fill="currentColor">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v5.7c0 4.83-3.4 9.13-7 10.36-3.6-1.23-7-5.53-7-10.36v-5.7l7-3.12z"/>
+          <path d="M12 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+        <span class="text-lg font-semibold text-[#1a1a1a]">ContractShield</span>
+      </div>
+
+      <!-- Center Navigation - Desktop -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#the-problem" class="text-sm text-[#6b6b6b] hover:text-[#1a1a1a]">The problem</a>
+        <a href="#how-it-works" class="text-sm text-[#6b6b6b] hover:text-[#1a1a1a]">How it works</a>
+        <a href="#why-not-chatgpt" class="text-sm text-[#6b6b6b] hover:text-[#1a1a1a]">Why not ChatGPT</a>
+        <a href="#pricing" class="text-sm text-[#6b6b6b] hover:text-[#1a1a1a]">Pricing</a>
+        <a href="#faq" class="text-sm text-[#6b6b6b] hover:text-[#1a1a1a]">FAQ</a>
+      </div>
+
+      <!-- Hamburger Menu - Mobile -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-[#1a1a1a]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Right Buttons -->
+      <div class="hidden md:flex items-center gap-4">
+        <button class="text-sm text-[#1a1a1a] font-medium hover:text-[#6b6b6b]">Log in</button>
+        <button class="bg-[#0F6E56] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#085041]">Try free</button>
+      </div>
+
+      <!-- Try Free Button - Mobile -->
+      <div class="md:hidden">
+        <button class="bg-[#0F6E56] text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-[#085041]">Try free</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#e5e5e3] bg-white px-6 py-4">
+      <div class="flex flex-col gap-4">
+        <a href="#the-problem" class="text-sm text-[#6b6b6b]">The problem</a>
+        <a href="#how-it-works" class="text-sm text-[#6b6b6b]">How it works</a>
+        <a href="#why-not-chatgpt" class="text-sm text-[#6b6b6b]">Why not ChatGPT</a>
+        <a href="#pricing" class="text-sm text-[#6b6b6b]">Pricing</a>
+        <a href="#faq" class="text-sm text-[#6b6b6b]">FAQ</a>
+        <button class="text-sm text-[#1a1a1a] font-medium text-left">Log in</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+
+    <!-- SECTION 1: HERO -->
+    <section class="px-6 py-16 md:py-24 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Left Column -->
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold leading-tight text-[#1a1a1a]" style="text-wrap: balance;">
+              Get clarity before you sign.
+            </h1>
+            <p class="text-lg text-[#6b6b6b] mt-3 max-w-md">
+              AI contract risk review built for business owners, not lawyers. Upload a supply contract, get a colour-coded risk report in 2 minutes.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 mt-6">
+              <button class="bg-[#0F6E56] text-white rounded-lg px-6 py-3 font-medium hover:bg-[#085041] text-center">
+                Review your first contract free
+              </button>
+              <a href="#how-it-works" class="border border-[#0F6E56] text-[#0F6E56] rounded-lg px-6 py-3 font-medium hover:bg-[#E1F5EE] text-center">
+                See how it works
+              </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-4 text-xs text-[#6b6b6b]">
+              <div class="flex items-center gap-1">
+                <span>&#10003;</span>
+                <span>No sign-up required</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span>&#10003;</span>
+                <span>GDPR compliant</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span>&#10003;</span>
+                <span>Data never stored</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span>&#10003;</span>
+                <span>Built for UK law</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Product Mockup -->
+          <div class="scale-75 md:scale-100 origin-top md:origin-center">
+            <div class="bg-white border border-[#e5e5e3] rounded-2xl shadow-sm overflow-hidden">
+              <div class="flex h-96 bg-[#f8f8f6]">
+                <!-- Email Area -->
+                <div class="w-3/5 border-r border-[#e5e5e3] flex flex-col">
+                  <!-- Toolbar -->
+                  <div class="bg-[#6b6b6b] px-4 py-3 flex items-center gap-2">
+                    <div class="w-2 h-2 bg-[#E24B4A] rounded-full"></div>
+                    <div class="w-2 h-2 bg-[#EF9F27] rounded-full"></div>
+                    <div class="w-2 h-2 bg-[#639922] rounded-full"></div>
+                    <span class="text-white text-xs ml-2">Inbox</span>
+                  </div>
+
+                  <!-- Email Content -->
+                  <div class="flex-1 flex flex-col p-4 bg-white">
+                    <div class="text-xs font-semibold text-[#1a1a1a]">David Palmer — Meridian Supplies Ltd</div>
+                    <div class="text-xs text-[#6b6b6b] mt-1">New supply agreement for Q3 — please review and sign</div>
+                    <div class="text-xs text-[#6b6b6b] mt-3 leading-relaxed">
+                      Hi, attached is our Q3 supply agreement. Please review and confirm by Friday.
+                    </div>
+
+                    <!-- Attachment -->
+                    <div class="mt-auto pt-4 border-t border-[#e5e5e3]">
+                      <div class="text-xs text-[#6b6b6b] flex items-center gap-2">
+                        <span>&#128206;</span>
+                        <span>Meridian_Supply_Agreement_Q3.pdf - 847 KB</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Prompt Bar -->
+                  <div class="bg-[#E1F5EE] border-t border-[#0F6E56] px-4 py-3 flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2">
+                      <span>&#11088;</span>
+                      <span class="font-medium text-[#1a1a1a]">Contract detected — check for risks?</span>
+                      <span class="text-[#6b6b6b]">2-min AI review - £3</span>
+                    </div>
+                    <button class="bg-[#0F6E56] text-white px-3 py-1 rounded text-xs font-medium hover:bg-[#085041]">
+                      Review now
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Sidebar Panel -->
+                <div class="w-2/5 bg-white flex flex-col border-l border-[#e5e5e3]">
+                  <!-- Header -->
+                  <div class="border-b border-[#e5e5e3] px-3 py-2 flex items-center justify-between bg-[#f8f8f6]">
+                    <div class="flex items-center gap-1 text-xs font-semibold">
+                      <span>&#128737;</span>
+                      <span>ContractShield</span>
+                    </div>
+                    <button class="text-xs text-[#6b6b6b]">&#10005;</button>
+                  </div>
+
+                  <!-- Risk Score -->
+                  <div class="flex flex-col items-center py-3 border-b border-[#e5e5e3]">
+                    <div class="w-16 h-16 rounded-full border-4 border-[#EF9F27] flex items-center justify-center bg-white">
+                      <span class="text-xl font-bold text-[#1a1a1a]">71</span>
+                    </div>
+                    <div class="text-xs font-semibold text-[#EF9F27] mt-2">MEDIUM RISK</div>
+                  </div>
+
+                  <!-- Risk Summary -->
+                  <div class="grid grid-cols-3 gap-2 px-2 py-3 border-b border-[#e5e5e3]">
+                    <div class="bg-[#FCEBEB] rounded px-2 py-1 text-center">
+                      <div class="text-xs font-bold text-[#E24B4A]">3</div>
+                      <div class="text-xs text-[#6b6b6b]">High</div>
+                    </div>
+                    <div class="bg-[#FAEEDA] rounded px-2 py-1 text-center">
+                      <div class="text-xs font-bold text-[#EF9F27]">4</div>
+                      <div class="text-xs text-[#6b6b6b]">Medium</div>
+                    </div>
+                    <div class="bg-[#EAF3DE] rounded px-2 py-1 text-center">
+                      <div class="text-xs font-bold text-[#639922]">6</div>
+                      <div class="text-xs text-[#6b6b6b]">Low</div>
+                    </div>
+                  </div>
+
+                  <!-- Risk Items -->
+                  <div class="flex-1 overflow-y-auto px-2 py-3 space-y-2">
+                    <div class="border-l-4 border-[#E24B4A] pl-2 py-1">
+                      <div class="text-xs font-semibold text-[#1a1a1a]">Liability — uncapped</div>
+                    </div>
+                    <div class="border-l-4 border-[#E24B4A] pl-2 py-1">
+                      <div class="text-xs font-semibold text-[#1a1a1a]">Payment terms — 90 days</div>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="border-t border-[#e5e5e3] px-2 py-2 space-y-2">
+                    <button class="w-full bg-[#0F6E56] text-white text-xs font-medium py-1.5 rounded hover:bg-[#085041]">
+                      Download PDF
+                    </button>
+                    <button class="w-full border border-[#0F6E56] text-[#0F6E56] text-xs font-medium py-1.5 rounded hover:bg-[#E1F5EE]">
+                      Send to colleague
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE PROBLEM -->
+    <section id="the-problem" class="bg-[#f8f8f6] px-6 py-16 md:py-24 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a]" style="text-wrap: balance;">
+            Most small businesses sign contracts they don't fully understand.
+          </h2>
+          <p class="text-[#6b6b6b] mt-4 max-w-2xl mx-auto">
+            No in-house lawyer. No time. No budget for a solicitor. So the contract gets signed anyway — and the problems come later.
+          </p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-2xl border border-[#e5e5e3] p-6">
+            <div class="text-3xl font-bold text-[#E24B4A] mb-2">£70.4bn</div>
+            <p class="text-sm text-[#6b6b6b] leading-relaxed mb-3">owed to UK SMEs in outstanding late payments — often caused by weak contract terms that were never reviewed.</p>
+            <p class="text-xs text-[#6b6b6b] font-medium">Hiscox, 2025</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-[#e5e5e3] p-6">
+            <div class="text-3xl font-bold text-[#E24B4A] mb-2">90%</div>
+            <p class="text-sm text-[#6b6b6b] leading-relaxed mb-3">of UK companies experienced late payments last year. The contracts they signed didn't protect them.</p>
+            <p class="text-xs text-[#6b6b6b] font-medium">Coface, 2025</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-[#e5e5e3] p-6">
+            <div class="text-3xl font-bold text-[#E24B4A] mb-2">62%</div>
+            <p class="text-sm text-[#6b6b6b] leading-relaxed mb-3">of small business invoices are paid late. Most SME owners don't know their contracts entitle them to statutory interest.</p>
+            <p class="text-xs text-[#6b6b6b] font-medium">FreeAgent, 2025</p>
+          </div>
+        </div>
+
+        <!-- Callout Box -->
+        <div class="bg-white border-l-4 border-[#0F6E56] rounded-lg p-6">
+          <p class="text-[#1a1a1a]">
+            A typical UK solicitor charges £300–500 to review a single contract and takes 5–10 business days. Most SME owners don't pay that. They sign, hope for the best, and find out they had no protection when things go wrong.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3A: HOW IT WORKS -->
+    <section id="how-it-works" class="px-6 py-16 md:py-24 md:px-12 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a]" style="text-wrap: balance;">
+            Three steps. Two minutes. One less risk.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0F6E56] text-white font-bold mb-4">1</div>
+            <div class="text-3xl mb-3">&#128231;</div>
+            <h3 class="font-semibold text-[#1a1a1a] mb-2">Contract arrives in your inbox</h3>
+            <p class="text-sm text-[#6b6b6b]">Our Outlook and Gmail add-on automatically detects contract attachments. A prompt appears: 'Contract detected — check for risks?' You can also drag and drop a PDF on our web app.</p>
+          </div>
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0F6E56] text-white font-bold mb-4">2</div>
+            <div class="text-3xl mb-3">&#128269;</div>
+            <h3 class="font-semibold text-[#1a1a1a] mb-2">AI reviews against UK standards</h3>
+            <p class="text-sm text-[#6b6b6b]">Our engine checks every clause against UK supply contract benchmarks — UCTA, Late Payment Act, UK GDPR. It scores risk severity and flags missing protections you didn't know to look for.</p>
+          </div>
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0F6E56] text-white font-bold mb-4">3</div>
+            <div class="text-3xl mb-3">&#128196;</div>
+            <h3 class="font-semibold text-[#1a1a1a] mb-2">Get your risk report</h3>
+            <p class="text-sm text-[#6b6b6b]">A colour-coded report with a 0–100 risk score, clause-by-clause breakdown, missing clause warnings, and suggested counter-language you can copy and send to your supplier.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3B: REPORT MOCKUP -->
+    <section class="bg-[#f8f8f6] px-6 py-16 md:py-24 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3" style="text-wrap: balance;">
+            Every clause scored. Every risk explained.
+          </h2>
+          <p class="text-[#6b6b6b] max-w-2xl mx-auto">
+            Not a wall of AI text. A structured risk report you can act on, share with your team, or use to negotiate with your supplier.
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto bg-white border border-[#e5e5e3] rounded-2xl p-8">
+          <!-- Risk Score -->
+          <div class="flex flex-col items-center mb-8">
+            <div class="w-24 h-24 rounded-full border-4 border-[#EF9F27] flex items-center justify-center bg-white mb-3">
+              <span class="text-4xl font-bold text-[#1a1a1a]">71</span>
+            </div>
+            <div class="text-lg font-bold text-[#EF9F27] mb-3">MEDIUM RISK</div>
+            <p class="text-sm text-[#6b6b6b] text-center">
+              Meridian Supply Agreement Q3 2026 - 14 pages - Reviewed in 94 seconds
+            </p>
+          </div>
+
+          <!-- Summary Row -->
+          <div class="grid grid-cols-3 gap-4 mb-8 pb-8 border-b border-[#e5e5e3]">
+            <div class="bg-[#FCEBEB] rounded-lg p-4 text-center">
+              <div class="font-bold text-[#E24B4A] text-lg">3</div>
+              <div class="text-xs text-[#6b6b6b]">High risk</div>
+            </div>
+            <div class="bg-[#FAEEDA] rounded-lg p-4 text-center">
+              <div class="font-bold text-[#EF9F27] text-lg">4</div>
+              <div class="text-xs text-[#6b6b6b]">Medium</div>
+            </div>
+            <div class="bg-[#EAF3DE] rounded-lg p-4 text-center">
+              <div class="font-bold text-[#639922] text-lg">6</div>
+              <div class="text-xs text-[#6b6b6b]">Low risk</div>
+            </div>
+          </div>
+
+          <!-- High Risk Issues -->
+          <div class="mb-8">
+            <div class="uppercase text-xs font-bold text-[#6b6b6b] mb-4">High Risk Issues</div>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#E24B4A] bg-white p-4 rounded">
+                <h4 class="font-semibold text-[#1a1a1a] mb-2">Liability — uncapped</h4>
+                <p class="text-sm text-[#6b6b6b] mb-3">No limitation of liability clause found. Your exposure is unlimited under this contract. UK market standard for supply agreements caps total liability at 100–150% of the annual contract value.</p>
+                <a href="#" class="text-sm font-medium text-[#0F6E56] hover:underline">View suggested clause &rarr;</a>
+              </div>
+              <div class="border-l-4 border-[#E24B4A] bg-white p-4 rounded">
+                <h4 class="font-semibold text-[#1a1a1a] mb-2">Payment terms — 90 days net</h4>
+                <p class="text-sm text-[#6b6b6b] mb-3">Payment is due 90 days after invoice. The UK average for supply contracts is 30 days. Under the Late Payment of Commercial Debts (Interest) Act 1998, you are entitled to charge 8% + Bank of England base rate on overdue invoices.</p>
+                <a href="#" class="text-sm font-medium text-[#0F6E56] hover:underline">View suggested clause &rarr;</a>
+              </div>
+              <div class="border-l-4 border-[#E24B4A] bg-white p-4 rounded">
+                <h4 class="font-semibold text-[#1a1a1a] mb-2">Force majeure — missing</h4>
+                <p class="text-sm text-[#6b6b6b] mb-3">This contract contains no force majeure clause. Neither party can suspend obligations during pandemics, natural disasters, or supply chain disruptions. 89% of UK supply contracts include this provision.</p>
+                <a href="#" class="text-sm font-medium text-[#0F6E56] hover:underline">View suggested clause &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Missing Clauses -->
+          <div class="mb-8">
+            <div class="uppercase text-xs font-bold text-[#6b6b6b] mb-4">Missing Clauses</div>
+            <div class="space-y-3">
+              <div class="border-l-4 border-[#EF9F27] bg-white p-4 rounded">
+                <p class="text-sm text-[#6b6b6b]">GDPR data processing addendum — Required under UK GDPR if personal data (e.g. delivery addresses) flows through the supply chain.</p>
+              </div>
+              <div class="border-l-4 border-[#EF9F27] bg-white p-4 rounded">
+                <p class="text-sm text-[#6b6b6b]">Termination for convenience — No exit clause outside material breach. You are locked in for the full contract term.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#e5e5e3]">
+            <button class="flex-1 bg-[#0F6E56] text-white font-medium py-3 rounded-lg hover:bg-[#085041]">
+              Download full PDF report
+            </button>
+            <button class="flex-1 border border-[#0F6E56] text-[#0F6E56] font-medium py-3 rounded-lg hover:bg-[#E1F5EE]">
+              Send report to colleague
+            </button>
+          </div>
+
+          <p class="text-xs text-[#6b6b6b] text-center mt-4">
+            Risk assessment, not legal advice. Data processed in UK. Zero retention.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3C: INTEGRATIONS -->
+    <section class="px-6 py-16 md:py-24 md:px-12 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3" style="text-wrap: balance;">
+            Works where you already work
+          </h2>
+          <p class="text-[#6b6b6b] max-w-2xl mx-auto">
+            You don't need to learn a new tool or change your workflow. ContractShield embeds where contracts already arrive.
+          </p>
+        </div>
+
+        <!-- Available Now Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div class="bg-white border border-[#e5e5e3] rounded-2xl p-6">
+            <div class="text-4xl mb-4">&#128231;</div>
+            <h3 class="font-semibold text-[#1a1a1a] mb-2">Microsoft Outlook</h3>
+            <p class="text-sm text-[#6b6b6b] mb-4">Contracts arrive as attachments. Our add-on detects them and shows a review prompt in the sidebar. One click to review, results appear without leaving Outlook.</p>
+            <div class="inline-block bg-[#0F6E56] text-white text-xs font-medium px-3 py-1 rounded-full">Available now</div>
+          </div>
+          <div class="bg-white border border-[#e5e5e3] rounded-2xl p-6">
+            <div class="text-4xl mb-4">&#128236;</div>
+            <h3 class="font-semibold text-[#1a1a1a] mb-2">Gmail</h3>
+            <p class="text-sm text-[#6b6b6b] mb-4">Same experience in Gmail. The add-on detects PDF and DOCX attachments, prompts for review, and delivers the risk report in the sidebar panel.</p>
+            <div class="inline-block bg-[#0F6E56] text-white text-xs font-medium px-3 py-1 rounded-full">Available now</div>
+          </div>
+          <div class="bg-white border border-[#e5e5e3] rounded-2xl p-6">
+            <div class="text-4xl mb-4">&#127760;</div>
+            <h3 class="font-semibold text-[#1a1a1a] mb-2">Web app</h3>
+            <p class="text-sm text-[#6b6b6b] mb-4">No add-on? No problem. Drag and drop any contract on our web app for the same risk review. Works with PDF and DOCX.</p>
+            <div class="inline-block bg-[#0F6E56] text-white text-xs font-medium px-3 py-1 rounded-full">Available now</div>
+          </div>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="border-t border-[#e5e5e3] pt-12">
+          <h3 class="text-center font-semibold text-[#6b6b6b] mb-6">Coming soon</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-[#f8f8f6] border border-[#e5e5e3] rounded-2xl p-6 opacity-75">
+              <div class="text-3xl mb-3">&#128202;</div>
+              <h4 class="font-medium text-[#6b6b6b] mb-1">Xero</h4>
+              <p class="text-xs text-[#6b6b6b] mb-3">Link contract risk scores to your supplier records</p>
+              <div class="inline-block bg-gray-300 text-[#6b6b6b] text-xs font-medium px-3 py-1 rounded-full">Coming soon</div>
+            </div>
+            <div class="bg-[#f8f8f6] border border-[#e5e5e3] rounded-2xl p-6 opacity-75">
+              <div class="text-3xl mb-3">&#128200;</div>
+              <h4 class="font-medium text-[#6b6b6b] mb-1">QuickBooks</h4>
+              <p class="text-xs text-[#6b6b6b] mb-3">Contract intelligence meets accounting</p>
+              <div class="inline-block bg-gray-300 text-[#6b6b6b] text-xs font-medium px-3 py-1 rounded-full">Coming soon</div>
+            </div>
+            <div class="bg-[#f8f8f6] border border-[#e5e5e3] rounded-2xl p-6 opacity-75">
+              <div class="text-3xl mb-3">&#9997;</div>
+              <h4 class="font-medium text-[#6b6b6b] mb-1">DocuSign</h4>
+              <p class="text-xs text-[#6b6b6b] mb-3">Risk check before you sign</p>
+              <div class="inline-block bg-gray-300 text-[#6b6b6b] text-xs font-medium px-3 py-1 rounded-full">Coming soon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3D: WHY NOT CHATGPT -->
+    <section id="why-not-chatgpt" class="bg-[#f8f8f6] px-6 py-16 md:py-24 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3" style="text-wrap: balance;">
+            Why not just paste it into ChatGPT?
+          </h2>
+          <p class="text-[#6b6b6b] max-w-2xl mx-auto">
+            Fair question. Here's the honest answer.
+          </p>
+        </div>
+
+        <p class="text-center text-sm text-[#6b6b6b] max-w-3xl mx-auto leading-relaxed mb-8">
+          General AI tools can summarise a contract if you know the right questions to ask. But they don't proactively check for missing clauses, don't score risk against UK legal benchmarks, give different answers every time, and their output is a conversation — not a structured report you can act on.
+        </p>
+
+        <!-- Comparison Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="border-b-2 border-[#e5e5e3]">
+                <th class="text-left font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Feature</th>
+                <th class="text-left font-semibold text-[#1a1a1a] py-3 px-4 bg-white">ChatGPT / Claude</th>
+                <th class="text-left font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Solicitor</th>
+                <th class="text-left font-semibold text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE]">ContractShield</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Price</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">£20/mo subscription</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">£300–500 per review</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">£3 per contract</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">UK law built in</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Generic, US-biased</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Yes — expert knowledge</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">Yes — UK playbooks</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Finds missing clauses</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Only if you ask</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Yes</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">Yes — automatically</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Structured risk score</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">No — prose</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">No — verbal</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">0–100 with ratings</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Consistent output</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Different every time</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Depends on solicitor</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">Same every time</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Turnaround</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Instant</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">5–10 business days</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">2 minutes</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Data privacy</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Unclear</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Legal privilege</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">GDPR compliant</td>
+              </tr>
+              <tr class="border-b border-[#e5e5e3]">
+                <td class="font-semibold text-[#1a1a1a] py-3 px-4 bg-white">Actionable output</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Consult a lawyer</td>
+                <td class="text-[#6b6b6b] py-3 px-4 bg-white">Email advice</td>
+                <td class="text-[#1a1a1a] py-3 px-4 bg-[#E1F5EE] font-medium">PDF with counter-language</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-8">
+          <p class="text-lg font-semibold text-[#1a1a1a]">
+            ChatGPT is a conversation. ContractShield is a risk report.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3E: WHAT IT CHECKS -->
+    <section class="px-6 py-16 md:py-24 md:px-12 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-2" style="text-wrap: balance;">
+            Built for the contracts UK small businesses actually sign
+          </h2>
+          <p class="text-[#6b6b6b]">
+            Starting with supply agreements — the highest-risk, most commonly ignored contract type for SMEs.
+          </p>
+        </div>
+
+        <!-- Featured Card -->
+        <div class="border-2 border-[#0F6E56] rounded-2xl p-8 mb-6">
+          <div class="inline-block bg-[#0F6E56] text-white text-xs font-medium px-3 py-1 rounded-full mb-4">Core speciality</div>
+          <h3 class="text-xl font-semibold text-[#1a1a1a] mb-4">Supply &amp; vendor agreements</h3>
+          <div class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-[#6b6b6b]">
+            <div>Liability caps</div>
+            <div>Payment terms</div>
+            <div>Force majeure</div>
+            <div>Delivery obligations</div>
+            <div>Warranty periods</div>
+            <div>Termination rights</div>
+            <div>GDPR data processing</div>
+            <div>Indemnification</div>
+            <div>Insurance requirements</div>
+            <div>Dispute resolution</div>
+          </div>
+        </div>
+
+        <!-- Standard Cards Grid -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-[#e5e5e3] rounded-2xl p-6">
+            <h4 class="font-semibold text-[#1a1a1a] mb-2">Service contracts</h4>
+            <p class="text-sm text-[#6b6b6b]">IT, marketing, cleaning, consulting agreements</p>
+          </div>
+          <div class="border border-[#e5e5e3] rounded-2xl p-6">
+            <h4 class="font-semibold text-[#1a1a1a] mb-2">Freelancer &amp; contractor agreements</h4>
+            <p class="text-sm text-[#6b6b6b]">Scope of work, IP ownership, payment, termination</p>
+          </div>
+          <div class="border border-[#e5e5e3] rounded-2xl p-6">
+            <h4 class="font-semibold text-[#1a1a1a] mb-2">NDAs &amp; confidentiality</h4>
+            <p class="text-sm text-[#6b6b6b]">Scope, duration, carve-outs, permitted disclosure</p>
+          </div>
+          <div class="border border-[#e5e5e3] rounded-2xl p-6">
+            <h4 class="font-semibold text-[#1a1a1a] mb-2">SaaS &amp; software terms</h4>
+            <p class="text-sm text-[#6b6b6b]">Auto-renewal, data rights, SLA commitments, liability</p>
+          </div>
+          <div class="border border-[#e5e5e3] rounded-2xl p-6">
+            <h4 class="font-semibold text-[#1a1a1a] mb-2">Commercial leases</h4>
+            <p class="text-sm text-[#6b6b6b]">Break clauses, rent review, repair obligations, deposit terms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PRICING -->
+    <section id="pricing" class="bg-[#f8f8f6] px-6 py-16 md:py-24 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a]" style="text-wrap: balance;">
+            Cheaper than the risk of not checking.
+          </h2>
+        </div>
+
+        <!-- Benefits Row -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          <div class="bg-white border border-[#e5e5e3] rounded-full px-4 py-2 text-sm text-[#6b6b6b]">&#10003; Full risk report with every review</div>
+          <div class="bg-white border border-[#e5e5e3] rounded-full px-4 py-2 text-sm text-[#6b6b6b]">&#10003; UK supply contract playbook</div>
+          <div class="bg-white border border-[#e5e5e3] rounded-full px-4 py-2 text-sm text-[#6b6b6b]">&#10003; Missing clause detection</div>
+          <div class="bg-white border border-[#e5e5e3] rounded-full px-4 py-2 text-sm text-[#6b6b6b]">&#10003; Suggested counter-language</div>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
+          <!-- Pay As You Go -->
+          <div class="bg-white border border-[#e5e5e3] rounded-2xl p-8">
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mb-4">Pay as you go</h3>
+            <div class="mb-2">
+              <span class="text-4xl font-bold text-[#1a1a1a]">£3</span>
+              <span class="text-sm text-[#6b6b6b] ml-2">per contract</span>
+            </div>
+            <div class="border-t border-[#e5e5e3] my-4"></div>
+            <ul class="space-y-3 mb-6 text-sm text-[#6b6b6b]">
+              <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Full colour-coded risk report</span></li>
+              <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>0–100 risk score</span></li>
+              <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Missing clause detection</span></li>
+              <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Suggested counter-language</span></li>
+              <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>PDF export &amp; sharing</span></li>
+              <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>UK supply contract playbook</span></li>
+            </ul>
+            <button class="w-full border border-[#0F6E56] text-[#0F6E56] font-medium py-3 rounded-lg hover:bg-[#E1F5EE]">
+              Review your first contract free
+            </button>
+            <p class="text-xs text-[#6b6b6b] text-center mt-3">No subscription. No commitment.</p>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+              <div class="bg-[#0F6E56] text-white text-xs font-medium px-3 py-1 rounded-full">Most popular</div>
+            </div>
+            <div class="bg-white border-2 border-[#0F6E56] rounded-2xl p-8">
+              <h3 class="text-lg font-semibold text-[#1a1a1a] mb-4">Pro</h3>
+              <div class="mb-2">
+                <span class="text-4xl font-bold text-[#1a1a1a]">£29</span>
+                <span class="text-sm text-[#6b6b6b] ml-2">/month</span>
+              </div>
+              <div class="border-t border-[#e5e5e3] my-4"></div>
+              <p class="text-sm text-[#6b6b6b] italic mb-3">Everything in pay-as-you-go, plus:</p>
+              <ul class="space-y-3 mb-6 text-sm text-[#6b6b6b]">
+                <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Unlimited contract reviews</span></li>
+                <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>All contract types supported</span></li>
+                <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Outlook &amp; Gmail add-on access</span></li>
+                <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Priority processing</span></li>
+                <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Contract review history &amp; dashboard</span></li>
+                <li class="flex gap-2"><span class="text-[#0F6E56]">&#10003;</span><span>Team sharing &amp; collaboration</span></li>
+              </ul>
+              <button class="w-full bg-[#0F6E56] text-white font-medium py-3 rounded-lg hover:bg-[#085041]">
+                Start 14-day free trial
+              </button>
+              <p class="text-xs text-[#6b6b6b] text-center mt-3">Cancel anytime. No lock-in.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center text-sm text-[#6b6b6b] max-w-3xl mx-auto">
+          A single missed liability clause can cost you £10,000+. This costs less than a sandwich.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FAQ -->
+    <section id="faq" class="px-6 py-16 md:py-24 md:px-12 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center mb-12">
+          Frequently asked questions
+        </h2>
+
+        <div class="space-y-0 border-t border-[#e5e5e3]" id="faq-container">
+          <!-- FAQ items will be rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-white px-6 py-12 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v5.7c0 4.83-3.4 9.13-7 10.36-3.6-1.23-7-5.53-7-10.36v-5.7l7-3.12z"/>
+                <path d="M12 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+              </svg>
+              <span class="font-semibold">ContractShield</span>
+            </div>
+            <p class="text-sm text-gray-400">AI contract risk review built for UK business owners.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4 text-sm">Product</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white">Features</a></li>
+              <li><a href="#" class="hover:text-white">Pricing</a></li>
+              <li><a href="#" class="hover:text-white">Security</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4 text-sm">Company</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white">About</a></li>
+              <li><a href="#" class="hover:text-white">Blog</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4 text-sm">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white">Privacy</a></li>
+              <li><a href="#" class="hover:text-white">Terms</a></li>
+              <li><a href="#" class="hover:text-white">GDPR</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <p class="text-sm text-gray-400 text-center">&copy; 2026 ContractShield. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // FAQ Data
+    const faqData = [
+      {
+        q: "Is this legal advice?",
+        a: "No. ContractShield is a risk assessment tool, not a law firm. We help you understand what's in your contracts and flag potential issues. We always recommend consulting a solicitor for final sign-off on anything material."
+      },
+      {
+        q: "How long does a review take?",
+        a: "Our standard processing takes 2 minutes. The Pro plan includes priority processing (under 30 seconds) for urgent contracts."
+      },
+      {
+        q: "What types of contracts can you review?",
+        a: "We specialise in supply agreements, service contracts, freelancer agreements, NDAs, SaaS terms, and commercial leases. We're actively expanding. If your contract type isn't listed, try uploading it anyway — our system may still catch key risks."
+      },
+      {
+        q: "What about confidentiality?",
+        a: "Your contract data is processed in UK data centres, encrypted in transit and at rest, and never retained after processing. We comply with UK GDPR. See our full privacy policy for details."
+      },
+      {
+        q: "Can I use this in a team?",
+        a: "The Pro plan includes unlimited sharing and collaboration. Team members can see shared reports, comment, and download PDFs. Perfect for reviewing with your colleagues or solicitor."
+      },
+      {
+        q: "What formats do you support?",
+        a: "PDF and DOCX. If your contract is a scanned image or another format, you can usually convert it to PDF using a free online tool first."
+      },
+      {
+        q: "Can I cancel my Pro subscription anytime?",
+        a: "Yes. No lock-in, no penalty. Cancel any time from your account settings. You'll lose access at the end of your billing cycle."
+      },
+      {
+        q: "Do you offer a money-back guarantee?",
+        a: "The 14-day free trial lets you test the full Pro plan risk-free. If it's not for you, you won't be charged. After that, we believe one £3 review will more than pay for itself in reduced legal risk."
+      }
+    ];
+
+    // Render FAQ
+    const faqContainer = document.getElementById('faq-container');
+    faqData.forEach(function(item, index) {
+      const faqItem = document.createElement('div');
+      faqItem.className = 'border-b border-[#e5e5e3]';
+      faqItem.innerHTML = `
+        <button class="faq-btn w-full flex items-center justify-between py-4 px-0 hover:text-[#0F6E56] transition-colors text-left" data-index="${index}">
+          <span class="font-semibold text-[#1a1a1a]">${item.q}</span>
+          <svg class="faq-chevron w-5 h-5 text-[#6b6b6b] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer hidden pb-4 pr-6 text-sm text-[#6b6b6b]">${item.a}</div>
+      `;
+      faqContainer.appendChild(faqItem);
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const chevron = this.querySelector('.faq-chevron');
+        answer.classList.toggle('hidden');
+        chevron.classList.toggle('rotate-180');
+      });
+    });
+  </script>
+
+</body>
+</html>
